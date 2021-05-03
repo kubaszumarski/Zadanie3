@@ -3,6 +3,15 @@
 #1.Utworz funkcje: rankAccount <- function(dataFrame,colName,groupName,valueSort,num)
 #ktora bedzie zwracala dla danej tabeli(dataFrame) n wierszy posiadajace najwieksze wartosci(sortowanie po kolumnie valueSort)
 #dla wybranej grupy(konkretna wartosc komorki , np. "NAUCZYCIEL) z kolumny(colName) np. occupation-zawod.
+data<-read.csv('konta.csv')
+rankAccount <- function(dataFrame,colName,groupName,valueSort,num){
+  df<-dataframe%>%filter(colName==groupName)%>%collect()
+  View(df)
+}
+
+
+rankAccount(data,'occupation','LISTONOSZ',10)
+
 
 #2.Tak jak w 1 tylko z uzyciem datachunku.
 #przyklad naglowka:
